@@ -13,6 +13,54 @@ namespace ClassLibrary
     /// </summary>
     public class Train
     {
+
+        private static int trainCount = 0;
+        private String trainName = "";
+        
+
+         /// <summary>
+        /// Constructor clase Train
+        /// </summary>
+        public Train(name){
+
+            this.trainName = name;
+            trainCount ++;
+            Console.Write("New train created")
+        }
+
+         /// <summary>
+        /// Destructor clase Train
+        /// </summary>
+        ~Train(){
+
+            trainCount --;
+            Console.Write("Deleted train from count")
+        }
+
+         /// <summary>
+        /// Getters y Setters
+        /// </summary>
+
+        public static Int GetTrainCount(){
+
+            return this.trainCount;
+        }
+
+        public String GetTrainName(){
+
+            return this.trainName;
+        }
+
+        public static void SetTrainCount(Int newCount){
+
+            Train.trainCount = newCount;
+        }     
+
+        public void SetTrainName(String newName){
+
+            this.trainName = newName;
+        }
+
         /// <summary>
         /// Obtiene un valor que indica si las maquinas del tren han sido encendidas o no.
         /// </summary>
@@ -37,6 +85,8 @@ namespace ClassLibrary
             Console.Write("Engines on");
             return true;
         }
+
+        
 
         /// <summary>
         /// Detiene las máquinas del tren.
